@@ -1,0 +1,22 @@
+{
+  "name": "ecoia-attendance-simple-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "form-data": "^4.0.4",
+    "mysql2": "^3.10.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.5",
+    "pdfkit": "^0.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
