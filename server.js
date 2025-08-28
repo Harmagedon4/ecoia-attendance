@@ -1,16 +1,22 @@
-require('dotenv').config();
+// src/index.js
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
-const authRoutes = require('./routes/auth');
+const attendanceRoutes = require('./routes/attendanceRoutes');
+
 const app = express();
 
-app.use(cors());
+// Middlewares
+app.use(cors()); // Autorise toutes les origines
 app.use(express.json());
-app.use('/api/reset', authRoutes);
 
+// Routes
+app.use('/api', attendanceRoutes);
 
-app.listen(3006, () => {
-  console.log("🚀 Backend + Frontend dispo sur http://localhost:3006");
+// Lancement du serveur
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
 
+// Import du cron (pour déclencher l’envoi automatique d’email chaque semaine)
+require('./cron');
