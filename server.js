@@ -1,7 +1,7 @@
 // src/index.js
 const express = require('express');
 const cors = require('cors');
-const attendanceRoutes = require('./routes/attendanceRoutes');
+const attendanceRoutes = require('./src/routes/attendanceRoutes');
 
 const app = express();
 
@@ -19,4 +19,4 @@ app.listen(PORT, () => {
 });
 
 // Import du cron (pour déclencher l’envoi automatique d’email chaque semaine)
-require('./cron');
+require('./src/cron');
